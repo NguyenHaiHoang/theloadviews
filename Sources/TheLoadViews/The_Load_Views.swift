@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 14.0, *)
 struct The_Load_Views: View {
     @State var The_Load_Views_Button = false
     @State var The_Load_Views_0: String = ""
