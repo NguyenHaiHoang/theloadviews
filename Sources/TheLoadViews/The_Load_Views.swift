@@ -19,7 +19,10 @@ public struct The_Load_Views: View {
     
     public var body: some View {
         if The_Load_Views_Button {
-            The_Intro_Views()
+            //The_Intro_Views()
+            Color.clear.onAppear {
+                        self.whenComplete()
+                    }
         }else{
             ZStack{ Color.white.ignoresSafeArea()
                 if The_Load_Views_1.isEmpty{
@@ -56,11 +59,5 @@ public struct The_Load_Views: View {
             }.zIndex(1.0)
         }
 
-    }
-}
-
-struct The_Load_Views_Previews: PreviewProvider {
-    static var previews: some View {
-        The_Load_Views()
     }
 }
