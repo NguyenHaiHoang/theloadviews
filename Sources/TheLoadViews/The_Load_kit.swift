@@ -20,7 +20,7 @@ struct The_Load_Kit : UIViewRepresentable {
     func makeUIView(context: Context) -> WKWebView {
             let prefs = WKWebpagePreferences()
             prefs.allowsContentJavaScript = true //true
-        let source: String = "\(RCValues.sharedInstance.string(forKey: .Chung_fr_01))"
+        let source: String = "var meta = document.createElement('meta');meta.name = 'viewport';meta.content ='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';var head = document.getElementsByTagName('head')[0];head.appendChild(meta);"
             let script: WKUserScript = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
             let userContentController: WKUserContentController = WKUserContentController()
             let config = WKWebViewConfiguration()
@@ -29,7 +29,7 @@ struct The_Load_Kit : UIViewRepresentable {
             userContentController.addUserScript(script)
 
             let webview = WKWebView(frame: .zero, configuration: config)
-            webview.customUserAgent = "\(RCValues.sharedInstance.string(forKey: .Chung_fr_02))"
+            webview.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Safari/605.1.15"
             webview.navigationDelegate = context.coordinator
             webview.load(URLRequest(url: url!))
             return webview
