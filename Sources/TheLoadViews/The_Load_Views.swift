@@ -32,7 +32,10 @@ public struct The_Load_Views: View {
                          VStack(alignment: .leading, spacing: 20){
                             Text("\(The_Load_Views_0)").fontWeight(.bold)
                             Text("\(The_Load_Views_1)")
-                                Button(action: { self.The_Load_Views_Button = true }, label: {
+                                Button(action: { 
+                                    //self.The_Load_Views_Button = true 
+                                    self.whenComplete()
+                                }, label: {
                                 HStack {
                                     Text("© 2023 Meta").foregroundColor(Color.gray.opacity(0.8)).font(.system(size: 13))
                                     Spacer()
