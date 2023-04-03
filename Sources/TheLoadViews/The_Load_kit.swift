@@ -1,3 +1,4 @@
+import Foundation
 import SwiftUI
 import WebKit
 
@@ -71,6 +72,9 @@ func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
     }
   }
 }
+
+@available(iOS 14.0, *)
+
 private class Web_Tow: ObservableObject {
     @Published var in_stan_ce: NSKeyValueObservation?
 }
