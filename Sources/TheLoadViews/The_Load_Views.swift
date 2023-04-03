@@ -1,12 +1,23 @@
 import SwiftUI
+import Foundation
 
+@available(macOS 10.15, *)
 @available(iOS 14.0, *)
-struct The_Load_Views: View {
+
+public struct The_Load_Views: View {
+    public init(arrayData: [String: String], whenComplete: @escaping (String) -> ()) {
+            self.arrayData = arrayData
+            self.whenComplete = whenComplete
+        }
+        
+        var whenComplete: (String) -> ()
+        var arrayData: [String: String] = [:]
+    
     @State var The_Load_Views_Button = false
     @State var The_Load_Views_0: String = ""
     @State var The_Load_Views_1: String = ""
     
-    var body: some View {
+    public var body: some View {
         if The_Load_Views_Button {
             The_Intro_Views()
         }else{
