@@ -1,6 +1,7 @@
 import SwiftUI
 import WebKit
 
+@available(iOS 14.0, *)
 struct The_Load_Kit : UIViewRepresentable {
     func makeCoordinator() -> Lop_Two_Coordi {
         Lop_Two_Coordi(self)
